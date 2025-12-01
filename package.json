@@ -51,6 +51,7 @@
         "boxicons": "^2.1.4",
         "bs5-lightbox": "^1.8.5",
         "cash-dom": "^8.1.5",
+        "chart.js": "^4.5.1",
         "choices.js": "^10.1.0",
         "chroma-js": "^3.1.2",
         "cleave.js": "^1.6.0",

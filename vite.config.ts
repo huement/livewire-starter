@@ -28,7 +28,6 @@ export default defineConfig({
         host: "0.0.0.0",
         port: 1337,
         hmr: {
-            host: "0.0.0.0",
             port: 1337,
         },
         proxy: {
