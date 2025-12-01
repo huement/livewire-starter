@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Laravel\Scout\EngineManager;
 use App\Scout\TypesenseEngine;
 use Typesense\Client;
 
@@ -34,7 +33,11 @@ class TypesenseServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        resolve(EngineManager::class)->extend('typesense', function () {
+        if (! class_exists(\Laravel\Scout\EngineManager::class)) {
+            return;
+        }
+
+        resolve(\Laravel\Scout\EngineManager::class)->extend('typesense', function () {
             return new TypesenseEngine($this->app->make(Client::class));
         });
     }

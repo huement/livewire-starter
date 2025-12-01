@@ -1,0 +1,533 @@
+///  ▄         ▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ 
+/// ▐░▌       ▐░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
+/// ▐░▌       ▐░▌▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌
+/// ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌          ▐░▌       ▐░▌
+/// ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌
+/// ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
+/// ▐░█▀▀▀▀▀▀▀█░▌ ▀▀▀▀█░█▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀█░█▀▀ 
+/// ▐░▌       ▐░▌     ▐░▌     ▐░▌          ▐░▌          ▐░▌     ▐░▌  
+/// ▐░▌       ▐░▌     ▐░▌     ▐░▌          ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌      ▐░▌ 
+/// ▐░▌       ▐░▌     ▐░▌     ▐░▌          ▐░░░░░░░░░░░▌▐░▌       ▐░▌
+///  ▀         ▀       ▀       ▀            ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀                           
+///                HYPERWAVE SASS TOKENS FOR BOOTSTRAP 5.3.8
+///                     Built By HUEMENT.com
+/// 
+/// This file defines compile-time Sass tokens (colors, spacing, etc.)
+/// used to configure Bootstrap and custom components. Import this before
+/// any files that depend on these values. Runtime CSS variables live in
+/// `_hyperwave-theme-vars.scss`.
+// =============================================================================
+// Color System
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Grayscale
+// -----------------------------------------------------------------------------
+
+$white: #ffffff !default;
+$gray-100: #f5f6fa !default;
+$gray-200: #ebedf0 !default;
+$gray-300: #d7d9de !default;
+$gray-400: #c2c5cc !default;
+$gray-500: #9fa3ac !default;
+$gray-600: #7a7f8c !default;
+$gray-700: #4f5666 !default;
+$gray-800: #2c2f3a !default;
+$gray-900: #17181f !default;
+$black: #0d0d0d !default;
+
+// -----------------------------------------------------------------------------
+// Wavedash CSS Color Variables
+// -----------------------------------------------------------------------------
+
+// This is now the single source of truth for your colors.
+:root,
+[data-bs-theme="dark"] {
+  // Dark Mode (Dark, Saturated - default)
+  --wd-blue: #007bff;
+  --wd-indigo: #762bef;
+  --wd-purple: #b300ff;
+  --wd-pink: #e6398b;
+  --wd-red: #e23737;
+  --wd-orange: #fd7e14;
+  --wd-yellow: #ffc107; // This color must use dark text
+  --wd-green: #2bb474;
+  --wd-teal: #1aa07e;
+  --wd-cyan: #008fba;
+  --wd-lime: #88d12e; // Darkened lime for white text
+
+  // Semantic
+  --wd-primary: var(--wd-lime);
+  --wd-primary-hover: #7ab826;
+  --wd-primary-active: #6da020;
+  --wd-secondary: var(--wd-indigo);
+  --wd-success: var(--wd-green);
+  --wd-info: var(--wd-cyan);
+  --wd-warning: var(--wd-yellow);
+  --wd-danger: var(--wd-red);
+  --wd-light: #{$gray-200};
+  --wd-dark: #{$gray-900};
+
+  // Misc
+  --wd-code-bg: #0f1b26;
+}
+
+[data-bs-theme="light"] {
+  // Light Mode (Pastel)
+  --wd-blue: #85d2ff;
+  --wd-indigo: #b0b0ff;
+  --wd-purple: #d6a5ff;
+  --wd-pink: #ff8ebd;
+  --wd-red: #ff9797;
+  --wd-orange: #ffac5c;
+  --wd-yellow: #ffe54c;
+  --wd-green: #6ee78d;
+  --wd-teal: #70e9de;
+  --wd-cyan: #76e3ff;
+  --wd-lime: #ceff7f; // This is a lighter lime for light mode
+
+  // Semantic
+  --wd-primary: var(--wd-indigo);
+  --wd-primary-hover: #d6a5ff;
+  --wd-primary-active: #d6a5ff;
+  --wd-secondary: var(--wd-lime);
+  --wd-success: var(--wd-green);
+  --wd-info: var(--wd-cyan);
+  --wd-warning: var(--wd-yellow);
+  --wd-danger: var(--wd-red);
+  --wd-light: #{$gray-200};
+  --wd-dark: #{$gray-900};
+
+  // Misc
+  --wd-code-bg: #f1f1f1;
+}
+
+// =============================================================================
+// Sass Compilation Tokens
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Primary Colors (Bold / Saturated / Hyper)
+// -----------------------------------------------------------------------------
+
+$blue: #007bff !default; // deeper, electric blue
+$indigo: #762bef !default; // saturated indigo
+$purple: #b300ff !default; // dark vibrant purple
+$pink: #e6398b !default; // dark neon pink
+$red: #e23737 !default; // strong true red
+$orange: #fd7e14 !default; // bootstrap dark orange
+$yellow: #ffc107 !default; // dark-compatible yellow
+$green: #2bb474 !default; // bootstrap dark green
+$teal: #1aa07e !default; // deep rich teal
+$cyan: #008fba !default; // saturated cyan
+$lime: #88d12e !default; // dark lime primary
+
+// -----------------------------------------------------------------------------
+// Semantic Colors
+// -----------------------------------------------------------------------------
+
+$primary: $lime !default;
+$secondary: $indigo !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-200 !default;
+$dark: $gray-900 !default;
+
+$theme-mono-colors: (
+  "mono-100": $gray-100,
+  "mono-200": $gray-200,
+  "mono-300": $gray-300,
+  "mono-400": $gray-400,
+  "mono-500": $gray-500,
+  "mono-600": $gray-600,
+  "mono-700": $gray-700,
+  "mono-800": $gray-800,
+  "mono-900": $gray-900,
+  ) !default;
+
+// -----------------------------------------------------------------------------
+// Colors Map
+// -----------------------------------------------------------------------------
+
+$colors: (
+  'blue': $blue,
+  'indigo': $indigo,
+  'purple': $purple,
+  'pink': $pink,
+  'red': $red,
+  'orange': $orange,
+  'yellow': $yellow,
+  'green': $green,
+  'teal': $teal,
+  'cyan': $cyan,
+  'black': $black,
+  'white': $white,
+  'gray': $gray-600,
+  'gray-dark': $gray-800,
+  ) !default;
+
+// -----------------------------------------------------------------------------
+// Admin Dashboard Specific Colors
+// -----------------------------------------------------------------------------
+
+$sidebar-bg: mix($gray-900, $gray-700, 35%
+);
+$sidebar-text: #ecf0f1;
+$sidebar-hover: mix($gray-900, $gray-700, 65%);
+
+// -----------------------------------------------------------------------------
+// Admin Dashboard Secondary Colors
+// -----------------------------------------------------------------------------
+
+$action-bar-color: #ecf0f1 !default;
+$action-bar-bg: rgb(52, 58, 63) !default;
+$main-menu-bg: rgb(52, 58, 63) !default;
+$main-menu-color: #ecf0f1 !default;
+$main-menu-bg-hover: mix($gray-900, $gray-700, 65%);
+
+$header-bg: #ffffff;
+$content-bg: #f8f9fa;
+
+// =============================================================================
+// Transitions
+// =============================================================================
+
+$transition-base: all 0.15s ease-in-out !default;
+$transition-fade: opacity 0.15s linear !default;
+$transition-collapse: height 0.35s ease !default;
+
+$min-contrast-ratio: 1.5 !default;
+
+// =============================================================================
+// Options
+// =============================================================================
+
+
+$enable-rounded: true !default;
+
+// =============================================================================
+// Spacing
+// =============================================================================
+
+
+$spacer: 2rem !default;
+
+// =============================================================================
+// Body
+// =============================================================================
+
+// Note: These are SCSS compile-time defaults used for calculations.
+// Runtime theme colors are set via CSS variables in _hyperwave-theme-vars.scss
+$body-bg: mix($gray-900, $gray-800, 25%) !default;
+$body-color: $white !default;
+
+// =============================================================================
+// Links
+// =============================================================================
+
+
+$link-color: $blue !default;
+
+// =============================================================================
+// Components
+// =============================================================================
+
+
+$border-width: 1px !default;
+
+$border-radius: .375rem !default;
+$border-radius-sm: .25rem !default;
+$border-radius-lg: .5rem !default;
+$border-radius-pill: 50rem !default;
+$component-active-bg: $pink !default;
+
+$box-shadow: 1px 3px 24px -1px rgba($black, .15) !default;
+$box-shadow-sm: 0 1px 1px rgba($black, .1) !default;
+
+$headings-font-weight: 700 !default;
+
+$border-color: rgba($gray-500, .1) !default;
+
+$badge-color: $black !default;
+// =============================================================================
+// Fonts
+// =============================================================================
+
+
+// stylelint-disable-next-line value-keyword-case
+$font-family-sans-serif: "Inter",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  "Helvetica Neue",
+  Arial,
+  sans-serif,
+  "Apple Color Emoji",
+  "Segoe UI Emoji",
+  "Segoe UI Symbol" !default;
+
+$font-family-monospaced: "Ubuntu Sans Mono" !default;
+
+$font-family-headings: "Oxanium" !default;
+
+$text-muted: rgba($body-color, .3) !default;
+
+$blockquote-footer-color: $text-muted !default;
+
+$vr-border-width: 1px !default;
+
+
+// =============================================================================
+// Buttons
+// =============================================================================
+
+$input-btn-padding-y: 0.6rem !default;
+$input-btn-padding-x: 0.9rem !default;
+$input-btn-padding-y-sm: 0.375rem !default;
+$input-btn-padding-x-sm: 0.75rem !default;
+$input-btn-padding-y-lg: 1rem !default;
+$input-btn-padding-x-lg: 1.5rem !default;
+$btn-box-shadow: $box-shadow !default;
+$btn-font-family: $font-family-headings;
+
+// -----------------------------------------------------------------------------
+// CTA Buttons
+// -----------------------------------------------------------------------------
+
+$hudbtn-letter-spacing: 0.3125rem !default;
+$hudbtn-letter-spacing-sm: 0.1875rem !default;
+$hudbtn-border: 4px solid !default;
+$hudbtn-padding: 0.5rem !default;
+$hudbtn-height: 1.5rem !default;
+$hudbtn-font-size: 1rem !default;
+$hudbtn-font-size-sm: 0.8rem !default;
+$hudbtn-padding-x: 1.5625rem !default;
+$hudbtn-padding-y: 1.875rem !default;
+
+// =============================================================================
+// Tables
+// =============================================================================
+
+$table-cell-padding-y: .75rem !default;
+$table-cell-padding-x: .75rem !default;
+
+$table-border-width: 1px !default;
+$table-border-color: $black !default;
+
+$table-hover-bg-factor: 0 !default;
+
+$table-border-factor: 1 !default;
+
+$table-bg-scale: 0% !default;
+
+$table-variants: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+  ) !default;
+
+// =============================================================================
+// Buttons & Forms
+// =============================================================================
+
+
+$input-btn-padding-y: .75rem !default;
+$input-btn-padding-x: 1.5rem !default;
+
+// =============================================================================
+// Forms
+// =============================================================================
+
+
+$input-bg: var(--form-control-bg, $gray-900) !default;
+$input-disabled-bg: var(--form-control-disabled-bg, rgba($white, .1)) !default;
+$input-color: var(--form-control-color, $white) !default;
+
+$input-border-color: var(--form-control-border, $gray-800) !default;
+$input-border-width: 1px !default;
+
+$input-focus-border-color: $primary !default;
+$input-focus-box-shadow: 0 0 0 0.25rem rgba($primary, 0.25) !default;
+
+$input-placeholder-color: var(--form-control-placeholder, $text-muted) !default;
+
+$form-select-disabled-color: $input-placeholder-color !default;
+$form-select-disabled-bg: $input-disabled-bg !default;
+$form-select-bg: var(--form-select-bg, $gray-800) !default;
+
+$form-switch-color: $white !default;
+
+$form-switch-focus-color: $form-switch-color !default;
+
+$input-group-addon-bg: var(--input-group-addon-bg, $gray-700) !default;
+
+$form-check-input-bg: rgba($white, .3) !default;
+$form-check-input-border: 1px solid $border-color !default;
+
+$form-select-indicator-color: $white !default;
+$form-select-focus-box-shadow: 0 0 0 0.25rem rgba($primary, 0.25) !default;
+
+$form-range-track-bg: rgba($black, .2) !default;
+
+// =============================================================================
+// Navbar
+// =============================================================================
+
+
+$navbar-padding-y: $spacer * .75 !default;
+$navbar-padding-x: null !default;
+
+$navbar-nav-link-padding-x: 1rem !default;
+
+$navbar-light-color: $black !default;
+$navbar-light-hover-color: $black !default;
+$navbar-light-active-color: $black !default;
+$navbar-light-disabled-color: rgba($black, .3) !default;
+$navbar-light-icon-color: $black !default;
+$navbar-light-toggler-border-color: $black !default;
+
+$navbar-dark-color: $white !default;
+$navbar-dark-hover-color: $white !default;
+$navbar-dark-active-color: $white !default;
+$navbar-dark-disabled-color: rgba($white, .3) !default;
+$navbar-dark-icon-color: $white !default;
+$navbar-dark-toggler-border-color: $white !default;
+
+// =============================================================================
+// Navs
+// =============================================================================
+
+
+$nav-link-disabled-color: $text-muted !default;
+
+$nav-tabs-border-width: 0 !default;
+$nav-tabs-border-radius: 0 !default;
+$nav-tabs-link-active-color: $gray-800 !default;
+$nav-tabs-link-active-bg: $white !default;
+$nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg !default;
+
+$nav-pills-border-radius: $border-radius-pill !default;
+$nav-pills-link-active-color: $white !default;
+$nav-pills-link-active-bg: $primary !default;
+
+$nav-underline-link-active-color: $white !default;
+
+// =============================================================================
+// Dropdowns
+// =============================================================================
+
+
+$dropdown-link-hover-color: $white !default;
+$dropdown-link-hover-bg: rgba($white, .4) !default;
+
+// =============================================================================
+// Pagination
+// =============================================================================
+
+
+$pagination-bg: transparent !default;
+$pagination-border-width: 0 !default;
+
+$pagination-focus-color: $white !default;
+$pagination-focus-bg: $dropdown-link-hover-bg !default;
+$pagination-focus-box-shadow: none !default;
+
+$pagination-hover-color: $white !default;
+$pagination-hover-bg: $dropdown-link-hover-bg !default;
+
+$pagination-disabled-color: $text-muted !default;
+$pagination-disabled-bg: $pagination-bg !default;
+
+// =============================================================================
+// Cards
+// =============================================================================
+
+$card-border-width: 2px !default;
+$card-spacing-y: 1.875rem;
+$card-padding-y: 1.25rem;
+$card-padding-x: 1.75rem;
+$card-border-color: $border-color !default;
+$card-cap-bg: transparent !default;
+$card-cap-color: $white !default;
+$card-color: $white !default;
+$card-bg: transparent !default;
+
+// =============================================================================
+// Tooltips
+// =============================================================================
+
+
+$tooltip-opacity: 1 !default;
+
+// =============================================================================
+// Popovers
+// =============================================================================
+
+
+$popover-bg: $primary !default;
+
+$popover-header-color: $white !default;
+
+$popover-body-color: $white !default;
+
+// =============================================================================
+// Toasts
+// =============================================================================
+
+$toast-color: null !default; // Will use CSS var
+$toast-background-color: var(--wd-toast-bg) !default; // Will use CSS var
+$toast-border-color: var(--wd-toast-border) !default;
+
+$toast-header-color: var(--wd-toast-header-bg) !default;
+$toast-header-background-color: var(--wd-toast-bg) !default;
+
+// =============================================================================
+// Modals
+// =============================================================================
+
+
+$modal-content-color: $white !default;
+$modal-content-bg: $gray-900 !default;
+
+// =============================================================================
+// Progress Bars
+// =============================================================================
+
+
+$progress-bg: $input-disabled-bg !default;
+
+// =============================================================================
+// List Group
+// =============================================================================
+
+
+$list-group-color: var(--bs-list-group-color, $white) !default;
+$list-group-bg: $input-disabled-bg !default;
+$list-group-hover-bg: $pink !default;
+$list-group-disabled-color: $text-muted !default;
+$list-group-action-color: $body-color !default;
+$list-group-action-hover-color: $white !default;
+$list-group-action-active-bg: $list-group-hover-bg !default;
+
+// =============================================================================
+// Breadcrumbs
+// =============================================================================
+
+
+$breadcrumb-divider-color: $text-muted !default;
+$breadcrumb-active-color: $component-active-bg !default;
+
+// =============================================================================
+// Close
+// =============================================================================
+
+
+$btn-close-color: $white !default;

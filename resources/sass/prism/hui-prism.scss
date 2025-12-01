@@ -1,0 +1,116 @@
+@use 'sass:map';
+@use '../_hyperwave-tokens' as hyper;
+
+$wavedash-prism-dark: (
+  text: #adadad,
+  block-bg: #212121,
+  block-border: none,
+  inline-bg: #212121,
+  inline-text: #e6e6e6,
+  inline-border-color: #3b3b3b,
+  selection-bg: #545454,
+  selection-color: #e6e6e6,
+  focus-outline: #6e6e6e,
+  scrollbar-track: #2d2d2d,
+  scrollbar-thumb: #474747,
+  scrollbar-thumb-hover: #616161,
+  label-bg: #2d2d2d,
+  label-color: rgba(173, 173, 173, 0.5),
+  line-number-border: #3a3a3a,
+  line-number-color: rgba(173, 173, 173, 0.5),
+  copy-bg: #3b3b3b,
+  copy-color: #adadad,
+  copy-border: #545454,
+  copy-hover-bg: #545454,
+  copy-hover-color: #e6e6e6,
+  url-color: #02e5ac,
+  url-hover-bg: rgba(2, 229, 172, 0.3),
+  highlight-bg: rgba(251, 255, 18, 0.3),
+  inserted-bg: rgba(59, 252, 67, 0.2),
+  inserted-color: #3bfc43,
+  deleted-bg: rgba(255, 0, 84, 0.2),
+  deleted-color: #ff0054,
+  error-bg: rgba(255, 0, 84, 0.2),
+  error-color: #ff0054,
+  error-border: #ff0054,
+  warning-bg: rgba(253, 126, 71, 0.2),
+  warning-color: #fd7e47,
+  warning-border: #fd7e47,
+  comment-color: #a8a8a8,
+  punctuation-color: #e6e6e6,
+  tag-color: hyper.$red,
+  function-name-color: #1982c4,
+  boolean-color: #fd7e47,
+  property-color: #fbff12,
+  keyword-color: #9b47fa,
+  string-color: #0fb4f0,
+  operator-color: #02e5ac
+);
+
+$wavedash-prism-light: (
+  text: #24292e,
+  block-bg: #f6f8fa,
+  block-border: 1px solid #d0d7de,
+  inline-bg: #f6f8fa,
+  inline-text: #24292e,
+  inline-border-color: #d0d7de,
+  selection-bg: #b3d4fc,
+  selection-color: #24292e,
+  focus-outline: #0366d6,
+  scrollbar-track: #e1e4e8,
+  scrollbar-thumb: #c1c8cd,
+  scrollbar-thumb-hover: #959da5,
+  label-bg: #e1e4e8,
+  label-color: rgba(88, 96, 105, 0.7),
+  line-number-border: #d0d7de,
+  line-number-color: rgba(88, 96, 105, 0.7),
+  copy-bg: #ffffff,
+  copy-color: #24292e,
+  copy-border: #d0d7de,
+  copy-hover-bg: #f6f8fa,
+  copy-hover-color: #0366d6,
+  url-color: #005cc5,
+  url-hover-bg: rgba(3, 102, 214, 0.1),
+  highlight-bg: rgba(255, 235, 59, 0.3),
+  inserted-bg: rgba(34, 134, 58, 0.1),
+  inserted-color: #22863a,
+  deleted-bg: rgba(215, 58, 73, 0.1),
+  deleted-color: #d73a49,
+  error-bg: rgba(215, 58, 73, 0.1),
+  error-color: #cb2431,
+  error-border: #d73a49,
+  warning-bg: rgba(227, 98, 9, 0.1),
+  warning-color: #e36209,
+  warning-border: #e36209,
+  comment-color: #6a737d,
+  punctuation-color: #24292e,
+  tag-color: #d73a49,
+  function-name-color: #6f42c1,
+  boolean-color: #005cc5,
+  property-color: #e36209,
+  keyword-color: #d73a49,
+  string-color: #032f62,
+  operator-color: #005cc5
+);
+
+@use '@huement/hui-prism/src/_index.scss' as hui-prism with ($hui-prism-themes: ('default': $wavedash-prism-dark,
+    'dark': $wavedash-prism-dark,
+    'light': $wavedash-prism-light ));
+
+:root {
+  @include hui-prism.hui-prism-vars('dark');
+}
+
+:root[data-hui-prism-theme='dark'],
+[data-hui-prism-theme='dark'],
+:root[data-bs-theme='dark'],
+[data-bs-theme='dark'] {
+  @include hui-prism.hui-prism-vars('dark');
+}
+
+[data-hui-prism-theme='light'],
+[data-bs-theme='light'] {
+  @include hui-prism.hui-prism-vars('light');
+}
+
+@include hui-prism.hui-prism-base();
