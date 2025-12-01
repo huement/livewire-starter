@@ -23,6 +23,10 @@
     <!-- Prism CSS -->
     <link rel="stylesheet" href="{{ asset('css/hui-prism.css') }}">
     
+    @vite(["resources/sass/dashboard.scss"])
+
+    @livewireStyles
+
     @stack('styles')
 </head>
 <body>
@@ -90,6 +94,13 @@
             </main>
         </div>
     </div>
+
+     <!-- start viewport debugger -->
+     @if (env("DEBUG_BOOTSTRAP_ENABLED", false))
+        <div class="mediaq xs-debug sm-debug md-debug lg-debug xl-debug xxl-debug" id="viewport-debugger"
+            title="Click to remove"></div>
+    @endif
+    <!-- end viewport debugger -->
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

@@ -1,0 +1,18 @@
+// --- Core Sass Modules ---
+@use 'sass:map';
+@use 'sass:list';
+@use 'sass:math';
+@use 'sass:color';
+@use 'sass:meta';
+@use 'sass:string';
+
+// Bootstrap Prefix.
+$prefix: "bs-";
+
+// Core Bootstrap framework
+@import '~bootstrap/scss/bootstrap';
+
+// --- Theme & Framework Imports ---
+// Theme-specific variables and Bootstrap configuration
+@import 'hyperwave-tokens';
+@import 'hui-debugger';
