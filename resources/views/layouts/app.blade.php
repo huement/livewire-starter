@@ -16,14 +16,14 @@
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
+
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
-    
+
     <!-- Prism CSS -->
     <link rel="stylesheet" href="{{ asset('css/hui-prism.css') }}">
-    
-    @vite(["resources/sass/dashboard.scss"])
+
+    @vite(["resources/sass/dashboard.scss", "resources/js/dashboard.ts"])
 
     @livewireStyles
 
@@ -90,6 +90,7 @@
             @include('layouts.navigation.sidebar')
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                {{ $slot ?? '' }}
                 @yield('content')
             </main>
         </div>
@@ -104,11 +105,22 @@
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    
+
     <!-- Prism.js -->
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-core.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/plugins/autoloader/prism-autoloader.min.js"></script>
-    
+
+    <!-- start chart & visualization libraries -->
+    <!-- ApexCharts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest/dist/apexcharts.min.js"></script>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js">
+    </script>
+
+    @livewireScripts
+
     @stack('scripts')
 </body>
 </html>
